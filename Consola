@@ -1,0 +1,18 @@
+[33mcommit 308a2816aeb3c2098fb65da913a47cb394b4066f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 474d236 39fc6d9
+Author: Lucas <lucas.gordillo.3591@gmail.com>
+Date:   Thu May 29 11:19:05 2025 -0300
+
+    Merge branch 'master' of https://github.com/lucasG-btfan/ppnv
+
+[33mcommit 474d236e57c6ab72a42adc2f616d43626d30a23d[m
+Author: Lucas <lucas.gordillo.3591@gmail.com>
+Date:   Thu May 29 11:12:28 2025 -0300
+
+    Agrega proyecto Consola
+
+[33mcommit 39fc6d91b7b3c1784a71292a76751c2eaff85bb1[m
+Author: Lucas <lucas.gordillo.3591@gmail.com>
+Date:   Thu May 29 09:44:01 2025 -0300
+
+    Inicia del main
