@@ -1,19 +1,26 @@
-2025-05-28 12:35:45.634 [main] INFO  org.example.Main - Iniciando aplicación de gestión de videojuegos
+2025-05-28 12:35:45.634 [main] INFO  org.example.MainVid - Iniciando aplicación de gestión de videojuegos
 2025-05-28 12:35:45.666 [main] INFO  org.example.Libreria - Videojuego agregado: The legend of Spyro dawn of the new dragon
 2025-05-28 12:35:45.667 [main] INFO  org.example.Libreria - Videojuego agregado: Principe de Persia: Las Arenas del tiempo
 2025-05-28 12:35:45.667 [main] INFO  org.example.Libreria - Videojuego agregado: Fortnite
 2025-05-28 12:35:45.668 [main] INFO  org.example.Libreria - Videojuego agregado: Call of Duty Black Ops
-2025-05-28 12:35:45.668 [main] INFO  org.example.Main - Videojuegos agregados exitosamente
-2025-05-28 12:40:16.130 [main] INFO  org.example.Main - Iniciando aplicación de gestión de videojuegos
+2025-05-28 12:35:45.668 [main] INFO  org.example.MainVid - Videojuegos agregados exitosamente
+2025-05-28 12:40:16.130 [main] INFO  org.example.MainVid - Iniciando aplicación de gestión de videojuegos
 2025-05-28 12:40:16.154 [main] INFO  org.example.Libreria - Videojuego agregado: The legend of Spyro dawn of the new dragon
 2025-05-28 12:40:16.154 [main] INFO  org.example.Libreria - Videojuego agregado: Principe de Persia: Las Arenas del tiempo
 2025-05-28 12:40:16.154 [main] INFO  org.example.Libreria - Videojuego agregado: Fortnite
 2025-05-28 12:40:16.154 [main] INFO  org.example.Libreria - Videojuego agregado: Call of Duty Black Ops
-2025-05-28 12:40:16.155 [main] INFO  org.example.Main - Videojuegos agregados exitosamente
-2025-05-28 12:59:49.404 [main] INFO  org.example.Main - Iniciando aplicación de gestión de videojuegos
+2025-05-28 12:40:16.155 [main] INFO  org.example.MainVid - Videojuegos agregados exitosamente
+2025-05-28 12:59:49.404 [main] INFO  org.example.MainVid - Iniciando aplicación de gestión de videojuegos
 2025-05-28 12:59:49.429 [main] INFO  org.example.Libreria - Videojuego agregado: The legend of Spyro dawn of the new dragon
 2025-05-28 12:59:49.429 [main] INFO  org.example.Libreria - Videojuego agregado: Principe de Persia: Las Arenas del tiempo
 2025-05-28 12:59:49.430 [main] INFO  org.example.Libreria - Videojuego agregado: Fortnite
 2025-05-28 12:59:49.430 [main] INFO  org.example.Libreria - Videojuego agregado: Call of Duty Black Ops
-2025-05-28 12:59:49.430 [main] INFO  org.example.Main - Videojuegos agregados exitosamente
+2025-05-28 12:59:49.430 [main] INFO  org.example.MainVid - Videojuegos agregados exitosamente
 2025-05-28 12:59:49.430 [main] INFO  org.example.Libreria - Lista de juegos:
+2025-05-29 13:25:39.094 [main] INFO  org.example.MainVid - Iniciando aplicación de gestión de videojuegos
+2025-05-29 13:25:39.121 [main] INFO  org.example.Libreria - Videojuego agregado: The legend of Spyro dawn of the new dragon
+2025-05-29 13:25:39.122 [main] INFO  org.example.Libreria - Videojuego agregado: Principe de Persia: Las Arenas del tiempo
+2025-05-29 13:25:39.122 [main] INFO  org.example.Libreria - Videojuego agregado: Fortnite
+2025-05-29 13:25:39.122 [main] INFO  org.example.Libreria - Videojuego agregado: Call of Duty Black Ops
+2025-05-29 13:25:39.122 [main] INFO  org.example.MainVid - Videojuegos agregados exitosamente
+2025-05-29 13:25:39.124 [main] INFO  org.example.Libreria - Lista de juegos:

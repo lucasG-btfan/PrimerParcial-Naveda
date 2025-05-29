@@ -26,18 +26,27 @@ public class DataBaseUtil {
         }
     }
 
-    public static void initDatabase(){
+    public static void initDatabase() {
         Connection conn = null;
         Statement stmt = null;
         try {
             conn = getConnection();
             stmt = conn.createStatement();
 
+            // SQL completo como una sola cadena
+            String sql = "CREATE TABLE IF NOT EXISTS videojuegos (" +
+                    "id INT AUTO_INCREMENT PRIMARY KEY, " +
                     "nombre VARCHAR(100) NOT NULL, " +
+                    "edad_min INTEGER, " +
+                    "digital BOOLEAN, " +
+                    "juego_offline BOOLEAN, " +
+                    "id_consola INTEGER)";
+
             stmt.execute(sql);
             System.out.println("Base de datos inicializada correctamente");
 
         } catch (SQLException e) {
+            System.err.println("Error al inicializar la base de datos:");
             e.printStackTrace();
         } finally {
             closeResources(conn, stmt);
