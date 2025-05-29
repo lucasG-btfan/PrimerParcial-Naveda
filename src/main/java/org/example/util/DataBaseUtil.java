@@ -13,7 +13,6 @@ public class DataBaseUtil {
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
     }
-
     public static void closeResources(Connection conn, Statement stmt) {
         try {
             if (stmt != null) stmt.close();
@@ -34,11 +33,7 @@ public class DataBaseUtil {
             conn = getConnection();
             stmt = conn.createStatement();
 
-            String sql = "CREATE TABLE IF NOT EXISTS consola (" +
-                    "id_cosola INT AUTO_INCREMENT PRIMARY KEY, " +
                     "nombre VARCHAR(100) NOT NULL, " +
-                    "precio DOUBLE ," +
-                    "marca VARCHAR(30) ";
             stmt.execute(sql);
             System.out.println("Base de datos inicializada correctamente");
 
