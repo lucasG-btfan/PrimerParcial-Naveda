@@ -8,6 +8,7 @@ import org.example.model.Videojuegos;
 import org.example.util.DataBaseUtil;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class VideojuegosDAOimpl implements VideojuegosDAO {
@@ -30,7 +31,7 @@ public class VideojuegosDAOimpl implements VideojuegosDAO {
             stmt.setInt(2, videojuego.getEdad_min());
             stmt.setBoolean(3, videojuego.isDigital());
             stmt.setBoolean(4, videojuego.isJuego_offline());
-            stmt.setInt(5,videojuego.getId_consola());
+            stmt.setInt(5, videojuego.getId_consola());
 
             int affectedRows = stmt.executeUpdate();
             logger.info("Filas afectadas al crear videojuego: {}", affectedRows);
@@ -106,17 +107,94 @@ public class VideojuegosDAOimpl implements VideojuegosDAO {
 
     @Override
     public List<Videojuegos> listarTodo() {
-        return List.of();
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        List<Videojuegos> videojuegos = new ArrayList<>();
+        try {
+
+            conn = DataBaseUtil.getConnection();
+            stmt = conn.createStatement();
+            String sql = "SELECT * FROM videojuegos";
+
+            rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                Videojuegos videojuego = new Videojuegos(
+                        rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getInt("edad_min"),
+                        rs.getBoolean("digital"),
+                        rs.getBoolean("juego_offline"),
+                        rs.getInt("id_consola")
+                );
+                videojuegos.add(videojuego);
+            }
+        } catch (SQLException | IdNegativoException | NombreInvalidoException e) {
+            e.printStackTrace();
+        } finally {
+
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            DataBaseUtil.closeResources(conn, stmt);
+        }
+        return videojuegos;
     }
 
     @Override
-    public boolean actualizar(Videojuegos videojuego) {
-        return false;
+    public boolean actualizar(Videojuegos videojuegos) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        boolean actualizado = false;
+
+        try {
+            conn = DataBaseUtil.getConnection();
+            String sql = "UPDATE productos SET nombre = ?," +
+                    "edad_min = ?, digital = ?, juego_offline = ?," +
+                    "id_consola= ? WHERE id = ?";
+            stmt = conn.prepareStatement(sql);
+
+
+            stmt.setString(1, videojuegos.getNombre());
+            stmt.setInt(2, videojuegos.getEdad_min());
+            stmt.setBoolean(3, videojuegos.isDigital());
+            stmt.setBoolean(4, videojuegos.isJuego_offline());
+            stmt.setInt(5, videojuegos.getId_consola());
+            int affectedRows = stmt.executeUpdate();
+
+            actualizado = (affectedRows > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DataBaseUtil.closeResources(conn, stmt);
+        }
+        return actualizado;
     }
 
     @Override
     public boolean eliminar(int id) {
-        return false;
-    }
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        boolean eliminado = false;
 
+        try {
+            conn = DataBaseUtil.getConnection();
+            String sql = "DELETE FROM videojuegos WHERE id = ?";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            int affectedRows = stmt.executeUpdate();
+            eliminado = (affectedRows > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DataBaseUtil.closeResources(conn, stmt);
+        }
+        return eliminado;
+    }
 }
