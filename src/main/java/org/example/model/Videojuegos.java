@@ -14,7 +14,6 @@ public class Videojuegos {
     public Videojuegos(String nombre, int edad_min, boolean digital, boolean juego_offline, int id_consola)
             throws NombreInvalidoException {
 
-        // Validar nombre
         if (nombre == null || nombre.isEmpty() || (nombre.length() == 1 && nombre.equals(" "))) {
             throw new NombreInvalidoException("El nombre debe tener al menos 1 carácter válido (no espacio)");
         }
@@ -28,13 +27,10 @@ public class Videojuegos {
 
     public Videojuegos(int id, String nombre, int edad_min, boolean digital, boolean juego_offline, int id_consola)
             throws IdNegativoException, NombreInvalidoException {
-
-        // Validar ID negativo
         if (id < 0) {
             throw new IdNegativoException("El ID no puede ser negativo: " + id);
         }
 
-        // Validar nombre
         if (nombre == null || nombre.isEmpty() || (nombre.length() == 1 && nombre.equals(" "))) {
             throw new NombreInvalidoException("El nombre debe tener al menos 1 carácter válido (no espacio)");
         }
