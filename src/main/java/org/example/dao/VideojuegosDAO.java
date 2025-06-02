@@ -9,7 +9,6 @@ public interface VideojuegosDAO {
     Videojuegos buscarPorId(int id);
     List<Videojuegos> listarTodo();
 
-    boolean actualizar(Videojuegos videojuego);
-    // boolean actualizar(int id, Videojuegos videojuego); id busca el obj a modificar y videojuego es tiene los datos con los que lo vas a reemplazar
+    boolean actualizar(int id, Videojuegos videojuego);
     boolean eliminar(int id);
 }
