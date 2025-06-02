@@ -24,3 +24,5 @@
 2025-05-29 13:25:39.122 [main] INFO  org.example.Libreria - Videojuego agregado: Call of Duty Black Ops
 2025-05-29 13:25:39.122 [main] INFO  org.example.MainVid - Videojuegos agregados exitosamente
 2025-05-29 13:25:39.124 [main] INFO  org.example.Libreria - Lista de juegos:
+2025-05-29 20:44:41.719 [main] INFO  org.example.dao.ConsolaDaoimpl - Iniciando aplicación de gestión de Consola
+2025-05-29 20:44:51.192 [main] INFO  org.example.dao.ConsolaDaoimpl - Iniciando aplicación de gestión de Consola

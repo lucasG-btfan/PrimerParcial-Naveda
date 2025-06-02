@@ -148,29 +148,27 @@ public class VideojuegosDAOimpl implements VideojuegosDAO {
     }
 
     @Override
-    public boolean actualizar(Videojuegos videojuegos) {
+    public boolean actualizar(int id, Videojuegos videojuego) {
         Connection conn = null;
         PreparedStatement stmt = null;
         boolean actualizado = false;
 
         try {
             conn = DataBaseUtil.getConnection();
-            String sql = "UPDATE productos SET nombre = ?," +
-                    "edad_min = ?, digital = ?, juego_offline = ?," +
-                    "id_consola= ? WHERE id = ?";
+            String sql = "UPDATE videojuegos SET nombre = ?, edad_min = ?, digital = ?, juego_offline = ?, id_consola = ? WHERE id = ?";
             stmt = conn.prepareStatement(sql);
 
+            stmt.setString(1, videojuego.getNombre());
+            stmt.setInt(2, videojuego.getEdad_min());
+            stmt.setBoolean(3, videojuego.isDigital());
+            stmt.setBoolean(4, videojuego.isJuego_offline());
+            stmt.setInt(5, videojuego.getId_consola());
+            stmt.setInt(6, id);
 
-            stmt.setString(1, videojuegos.getNombre());
-            stmt.setInt(2, videojuegos.getEdad_min());
-            stmt.setBoolean(3, videojuegos.isDigital());
-            stmt.setBoolean(4, videojuegos.isJuego_offline());
-            stmt.setInt(5, videojuegos.getId_consola());
             int affectedRows = stmt.executeUpdate();
-
             actualizado = (affectedRows > 0);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error al actualizar videojuego con ID: {}", id, e);
         } finally {
             DataBaseUtil.closeResources(conn, stmt);
         }
